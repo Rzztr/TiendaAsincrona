@@ -1,24 +1,103 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fondo general y centrado */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
 }
+
+/* Contenedor principal */
 .container {
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    width: 90%;
+    max-width: 1000px;
 }
+
+/* Inputs bonitos */
 input {
     margin: 10px 0;
-    padding: 8px;
-    width: 200px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s;
 }
+
+input:focus {
+    border-color: #00bcd4;
+    outline: none;
+}
+
+/* Botones con estilo */
 button {
-    padding: 8px 16px;
-    margin: 5px;
+    padding: 10px 20px;
+    margin: 10px 5px 0 0;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #008fa1;
+}
+
+/* Estilo para el carrito */
+#carrito-container {
+    max-height: 60vh;
+    overflow-y: auto;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fafafa;
+}
+
+/* Lista de productos */
+.card {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Total del carrito */
+#total {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #00796b;
+    margin-top: 10px;
 }

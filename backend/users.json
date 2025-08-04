@@ -1,0 +1,32 @@
+[
+  {
+    "username": "Jhon",
+    "phone": "4495403154",
+    "mail": "Ricardo.reyLop@proton.me",
+    "password": "pass123"
+  },
+  {
+    "username": "Jane",
+    "phone": "4492651269",
+    "mail": "jhonD.olimpicTec@proton.me",
+    "password": "secure987"
+  },
+  {
+    "username": "fulanito",
+    "phone": "4491234567",
+    "email": "correo@ejemplo.mx",
+    "password": "12345"
+  },
+  {
+    "username": "Vladimir",
+    "phone": "5564354335",
+    "email": "ejemplo@correo.com",
+    "password": "99999"
+  },
+  {
+    "username": "Adolfo",
+    "phone": "44919430301",
+    "email": "ejemplo@ejemplo.mx",
+    "password": "9988989899"
+  }
+]

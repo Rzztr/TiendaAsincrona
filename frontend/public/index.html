@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Login</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login a tiendaASYNC</h2>
+        <form action="/login" method="POST">
+            <input type="text" name="username" placeholder="Usuario" required><br>
+            <input type="password" name="password" placeholder="Contraseña" required><br>
+            <button type="submit">Entrar</button>
+            <p><a href='/registro'>No tienes cuenta? Registrate!</a></p>
+        </form>
+    </div>
+    
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        if (params.get("error") === "1") alert("Credenciales inválidas");
+        if (params.get("registered") === "1") alert("¡Registro exitoso!");
+    </script>
+    
+</body>
+</html>

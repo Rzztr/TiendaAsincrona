@@ -1,0 +1,18 @@
+[
+    {"id":1, "nombre":"Laptop", "precio":5000, "image":"/images/laptop.jpeg"},
+    {"id":2, "nombre":"Audifonos", "precio":2000, "image":"/images/audifonos.jpg"},
+    {"id":3, "nombre":"Teclado", "precio":1000, "image":"/images/teclado.jpeg"},
+    {"id":4, "nombre":"Mouse", "precio":500, "image":"/images/mouse.jpg"},
+    {"id":5, "nombre":"Mouse Pad", "precio":600, "image":"/images/mousepad.jpeg"},
+    {"id":6, "nombre":"Cable tipo C", "precio":86, "image":"/images/cableC.jpg"},
+    {"id":7, "nombre":"Pasta Termica", "precio":90, "image":"/images/pastaTermica.jpg"},
+    {"id":8, "nombre":"Aire Comprimido", "precio":160, "image":"/images/airecomprimido.jpg"},
+    {"id":9, "nombre":"Monitor 24\"", "precio":3200, "image":"/images/monitor.png"},
+    {"id":10, "nombre":"Disco Duro 1TB", "precio":950, "image":"/images/hdd1tb.jpeg"},
+    {"id":11, "nombre":"Memoria RAM 8GB DDR4", "precio":680, "image":"/images/ram8.jpg"},
+    {"id":12, "nombre":"Fuente de Poder 600W", "precio":1200, "image":"/images/fuentepoder.jpeg"},
+    {"id":13, "nombre":"Tarjeta Gráfica GTX 1660", "precio":4800, "image":"/images/grafica.jpg"},
+    {"id":14, "nombre":"Cámara Web HD", "precio":850, "image":"/images/webcam.jpeg"},
+    {"id":15, "nombre":"Microfono USB", "precio":720, "image":"/images/micro.jpg"},
+    {"id":16, "nombre":"Router Wi-Fi 6", "precio":1350, "image":"/images/router.jpg"}
+]

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 /* Reset básico */
 * {
     box-sizing: border-box;
@@ -5,99 +7,194 @@
     padding: 0;
 }
 
-/* Fondo general y centrado */
+/* Fondo general y centrado con estilo cyberpunk */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Orbitron', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    background: radial-gradient(circle at center, #0a0a0f 0%, #050509 100%);
+    color: #e0e0e0;
+    overflow-x: hidden;
+    position: relative;
 }
 
-/* Contenedor principal */
+/* Efecto decorativo de líneas luminosas */
+body::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to right,
+        transparent 0,
+        transparent 20px,
+        rgba(0, 255, 255, 0.05) 21px,
+        transparent 22px
+    );
+    animation: scan 8s linear infinite;
+    z-index: 0;
+}
+
+@keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* Contenedor principal con efecto de tarjeta cibernética */
 .container {
-    background: #fff;
-    padding: 30px;
+    background: rgba(10, 10, 15, 0.8);
+    padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border: 1px solid #00f0ff33;
+    box-shadow: 0 0 20px #00f0ff44, inset 0 0 10px #001f33;
+    backdrop-filter: blur(6px);
     width: 90%;
     max-width: 1000px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
-/* Inputs bonitos */
+.container:hover {
+    box-shadow: 0 0 30px #00f0ff66, inset 0 0 15px #002f44;
+    transform: scale(1.01);
+}
+
+/* Títulos con efecto neón */
+h1, h2, h3 {
+    color: #00f0ff;
+    text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* Inputs con estilo cyberpunk */
 input {
     margin: 10px 0;
-    padding: 10px;
+    padding: 12px;
     width: 100%;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 8px;
-    transition: border-color 0.3s;
+    background-color: #0d1117;
+    color: #00f0ff;
+    outline: none;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    box-shadow: 0 0 5px #00f0ff33;
+    transition: box-shadow 0.2s ease, background 0.2s ease;
 }
 
 input:focus {
-    border-color: #00bcd4;
-    outline: none;
+    background-color: #111822;
+    box-shadow: 0 0 12px #00f0ff88, 0 0 20px #00f0ff55 inset;
 }
 
-/* Botones con estilo */
+/* Labels con estilo futurista */
+label {
+    display: block;
+    text-align: left;
+    font-size: 0.9rem;
+    color: #a0f0ff;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+/* Botones con efecto neón */
 button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     margin: 10px 5px 0 0;
-    background-color: #00bcd4;
-    color: white;
+    background: linear-gradient(90deg, #0066ff, #00ffff);
+    color: #0a0a0f;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px #00f0ff88;
 }
 
 button:hover {
-    background-color: #008fa1;
+    background: linear-gradient(90deg, #00ffff, #0099ff);
+    box-shadow: 0 0 25px #00f0ffcc, 0 0 40px #00ffff66;
+    transform: translateY(-2px);
 }
 
-/* Estilo para el carrito */
+/* Estilo para el carrito con efecto cyberpunk */
 #carrito-container {
     max-height: 60vh;
     overflow-y: auto;
     margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: 15px;
+    border: 1px solid #00f0ff33;
     border-radius: 10px;
-    background-color: #fafafa;
+    background: rgba(13, 17, 23, 0.6);
+    box-shadow: 0 0 10px #00f0ff22, inset 0 0 5px #001f33;
 }
 
-/* Lista de productos */
+/* Scrollbar personalizado */
+#carrito-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+#carrito-container::-webkit-scrollbar-track {
+    background: #0a0a0f;
+    border-radius: 10px;
+}
+
+#carrito-container::-webkit-scrollbar-thumb {
+    background: #00f0ff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #00f0ff;
+}
+
+/* Lista de productos con efecto holográfico */
 .card {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
+    background: rgba(10, 10, 15, 0.7);
+    border: 1px solid #00f0ff22;
+    box-shadow: 0 6px 12px rgba(0, 240, 255, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     border-radius: 10px;
     overflow: hidden;
+    backdrop-filter: blur(4px);
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 240, 255, 0.4);
+    border-color: #00f0ff55;
 }
 
 .card-body {
     text-align: center;
+    padding: 20px;
 }
 
 .card-title {
     font-size: 1.2em;
     font-weight: bold;
+    color: #00f0ff;
+    text-shadow: 0 0 5px #00f0ff;
+    letter-spacing: 1px;
 }
 
 .card-text {
-    color: #555;
+    color: #a0f0ff;
     margin-bottom: 10px;
+    letter-spacing: 0.5px;
 }
 
-/* Total del carrito */
+/* Total del carrito con efecto brillante */
 #total {
-    font-size: 1.3em;
+    font-size: 1.4em;
     font-weight: bold;
-    color: #00796b;
-    margin-top: 10px;
+    color: #00ffff;
+    margin-top: 15px;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    letter-spacing: 2px;
 }

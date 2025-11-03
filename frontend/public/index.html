@@ -8,10 +8,14 @@
 </head>
 <body>
     <div class="container">
-        <h2>Login a tiendaASYNC</h2>
+        <h2>Login</h2>
         <form action="/login" method="POST">
-            <input type="text" name="username" placeholder="Usuario" required><br>
-            <input type="password" name="password" placeholder="Contraseña" required><br>
+            <input type="text" name="username" placeholder="Usuario" pattern="/^[0-9A--Za-z]{6-16}$/" title="Ingresa tu usuario asignado por sistemas" required><br>
+            <input type="password" name="password" placeholder="Contraseña" 
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&._-])[A-Za-z\d@$!%*?&._-]{8,16}$" 
+                title="La contraseña debe contener minimo 8 caracteres y simbolos especiales" 
+                required><br>
+
             <button type="submit">Entrar</button>
             <p><a href='/registro'>No tienes cuenta? Registrate!</a></p>
             <p><a href='/recuperarContrasenia'>Olvidaste tu contraseña?</a></p>

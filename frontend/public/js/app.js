@@ -3,7 +3,9 @@ const productsContainer = document.getElementById('products');
 const carritoContainer = document.getElementById('carrito');
 const totalDisplay = document.getElementById('total');
 
-let carrito = [];
+/**
+ *
+ * let carrito = [];
 
 async function loadProducts() {
     try {
@@ -81,6 +83,7 @@ function actualizarCarrito() {
 
 loadProducts();
 
+ */
 
 // Variable para almacenar el usuario actual en recuperación
 let currentUser = '';
@@ -115,51 +118,3 @@ document.getElementById('recovery-form').addEventListener('submit', async functi
         alert('Error de conexión: ' + error.message);
     }
 });
-
-// Función para resetear la contraseña con el código OTP
-async function resetPassword() {
-    const otpCode = document.getElementById('otp-code').value;
-    const newPassword = document.getElementById('new-password').value;
-    
-    // Validaciones básicas
-    if (!otpCode) {
-        alert('Por favor ingresa el código OTP');
-        return;
-    }
-    
-    if (!newPassword) {
-        alert('Por favor ingresa la nueva contraseña');
-        return;
-    }
-    
-    if (newPassword.length < 3) {
-        alert('La contraseña debe tener al menos 3 caracteres');
-        return;
-    }
-    
-    try {
-        const response = await fetch('/reset-password', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ 
-                username: currentUser, 
-                otpCode: otpCode, 
-                newPassword: newPassword 
-            })
-        });
-        
-        const result = await response.json();
-        
-        if (result.success) {
-            alert('¡Contraseña actualizada exitosamente!');
-            // Redirigir al login
-            window.location.href = '/index.html?password_reset=success';
-        } else {
-            alert('Error: ' + result.error);
-        }
-    } catch (error) {
-        alert('Error de conexión: ' + error.message);
-    }
-}

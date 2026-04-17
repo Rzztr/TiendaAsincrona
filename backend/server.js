@@ -154,7 +154,12 @@ app.post('/login', checkMultiSessions, async (req, res) => {
             req.session.user = username;
             req.session.isAdmin = isAdmin;
             req.session.userRole = user.role;
-            res.redirect('/dashboard');
+
+            if (isAdmin) {
+                res.redirect('/dashboard');
+            } else {
+                res.redirect('/tienda');
+            }
         } else {
             req.session.failedAttempts += 1;
 
@@ -249,8 +254,16 @@ app.post('/registerAdmin', requireAuth, async (req, res) => {
     }
 });
 
-// Dashboard protegido
+// Tienda protegida
+app.get('/tienda', requireAuth, (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/public', 'tienda.html'));
+});
+
+// Dashboard protegido (solo para admins)
 app.get('/dashboard', requireAuth, (req, res) => {
+    if (!req.session.isAdmin) {
+        return res.redirect('/tienda');
+    }
     res.sendFile(path.join(__dirname, '../frontend/public', 'dashboard.html'));
 });
 

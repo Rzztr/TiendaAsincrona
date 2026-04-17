@@ -3,9 +3,7 @@ const productsContainer = document.getElementById('products');
 const carritoContainer = document.getElementById('carrito');
 const totalDisplay = document.getElementById('total');
 
-/**
- *
- * let carrito = [];
+let carrito = [];
 
 async function loadProducts() {
     try {
@@ -82,8 +80,6 @@ function actualizarCarrito() {
 }
 
 loadProducts();
-
- */
 
 // Variable para almacenar el usuario actual en recuperación
 let currentUser = '';
